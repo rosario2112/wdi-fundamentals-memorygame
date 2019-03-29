@@ -6,14 +6,16 @@ header {
 
 header h1 {
  color: #FFFFFF;
+ text-align: center;
 }
 
 nav {
 	background-color: #00A6B3;
 	padding: 20px 0 20px 0;
+  text-align: center;
 }
 
-nav a{
+ nav a {
 	color: #FFFFFF;
 	border-bottom: 2px solid transparent;
 }
@@ -33,7 +35,7 @@ main{
 img{
   margin: 40px 8px 0;
 }
-  h1{
+  h1 {
 	font-family: "Raleway", sans-serif;
 	text-transform: uppercase;
 	color: #0D2C40;
@@ -72,4 +74,45 @@ main {
 
 img {
 	margin: 40px 8px 0;
+}
+
+footer{
+	text-transform: uppercase;
+	padding: 0, 20px;
+	background-color: #0D2C40;
+	font-size: 14px;
+	letter-spacing: .08em;
+	font-weight: 500;
+}
+
+footer p {
+	color: white;
+}
+
+.copyright {
+	font-family: "Raleway", sans-serif;
+	float: left;
+}
+
+.message {
+	font-family: "Raleway", sans-serif;
+	float: right;
+}
+
+.name{
+	color: #F15B31
+	font-weight:700;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+a:hover{
+	border-color: white;
 }

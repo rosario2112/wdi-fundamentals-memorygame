@@ -1,15 +1,74 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+var cards = [
+ {
+ 	rank: "queen",
+ 	suit: "hearts",
+ 	cardImage:"images/back.png"
+ },
 
-var cards = ["queen","queen","king","king"];
+ {
+ 	rank: "queen",
+ 	suit: "diamonds",
+ 	cardImage:"images/back.png"
+ },
 
+ {
+ 	rank: "king",
+ 	suit: "hearts",
+ 	cardImage:"images/back.png"
+ },
+
+ {
+ 	rank: "king",
+ 	suit: "diamonds",
+ 	cardImage:"images/back.png"
+}
+
+];
+
+var cardsInPlay = [];
+var checkForMatch = function() {
 
 if(cardsInPlay[0] === cardsInPlay[1]){
 
-var flipCard = function(cardId){
-  alert("You found a match");
-  }else {
-  alert("Sorry try again");
+    alert("You found a match!");
+  } else{
+    alert ("Sorry, try again.");
+  };
+
+var flipCard = function() {
+
+var cardId = this.getAttribute('data-id');
+
+this.setAttribute('src',cards[cardId].cardImage);
+
+cardsInPlay.push(cards[cardId].rank);
+
+if (cardsInPlay.length === 2) {
+
+	checkForMatch();
   }
-  console.log("User flipped" + cards[cardId]);
 };
 
-if (cardsInPlay == 2); 
+
+var createBoard = function(){
+	for(var i = 0; i < cards.length; i++) {
+
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src',"images/back.png");
+		cardElement.setAttribute('data-id', i);
+		cardElement.addEventListener('click', flipCard)
+		document.getElementById('game-board').appendChild(cardElement);
+
+	}
+};
+
+createBoard();
+
+};
+
+
+function reloadGame() {
+	window.location.reload();
+
+};
